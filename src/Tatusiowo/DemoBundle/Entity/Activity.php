@@ -9,7 +9,6 @@ namespace Tatusiowo\DemoBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use \DateTime;
 
 /**
  * @ORM\Entity
@@ -231,7 +230,7 @@ class Activity
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getApprovedAt()
     {
@@ -239,7 +238,7 @@ class Activity
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -299,11 +298,11 @@ class Activity
     }
 
     /**
-     * @param DateTime $approvedAt
+     * @param \DateTime $approvedAt
      *
      * @return $this
      */
-    public function setApprovedAt($approvedAt)
+    public function setApprovedAt(\DateTime $approvedAt)
     {
         $this->approvedAt = $approvedAt;
 
@@ -311,11 +310,11 @@ class Activity
     }
 
     /**
-     * @param DateTime $createdAt
+     * @param \DateTime $createdAt
      *
      * @return $this
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
 

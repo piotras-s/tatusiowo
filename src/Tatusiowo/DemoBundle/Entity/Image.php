@@ -8,7 +8,6 @@ namespace Tatusiowo\DemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use \DateTime;
 
 /**
  * @ORM\Entity
@@ -65,7 +64,7 @@ class Image
     protected $createdAt;
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -121,11 +120,11 @@ class Image
     }
 
     /**
-     * @param DateTime $createdAt
+     * @param \DateTime $createdAt
      *
      * @return $this
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
 
