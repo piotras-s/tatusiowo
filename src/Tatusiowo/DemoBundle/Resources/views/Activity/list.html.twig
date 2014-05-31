@@ -1,1 +1,55 @@
-Hello!
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="/assets/js/vendor/modernizr-2.8.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+		<header class="header wrapper">
+			<div class="grid">
+				<div class="grid__item one-half tablet-portrait--three-quarters">
+					logo
+				</div><!--
+				--><div class="grid__item one-half tablet-portrait--one-quarter">
+					<a class="menu-button jsNav" href="#sidr">
+						<span class="trigger"></span>
+					</a>
+
+					<div id="sidr">
+						<ul>
+							<li><a href="#">List 1</a></li>
+							<li class="active"><a href="#">List 2</a></li>
+							<li><a href="#">List 3</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+
+		{% block javascripts %}
+	        {% javascripts
+		    '@TatusiowoDemoBundle/Resources/public/js/vendor/jquery-1.11.1.min.js'
+	        %}
+	        <script src="{{ asset_url }}"></script>
+	        
+	        {% endjavascripts %}
+	    {% endblock %}
+<!--
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+        <script src="/Resources/public/js/vendor/jquery.sidr.min.js"></script>
+        <script src="/assets/js/main.js"></script>
+-->
+    </body>
+</html>
