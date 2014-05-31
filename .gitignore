@@ -1,11 +1,40 @@
-/web/bundles/
-/app/bootstrap.php.cache
-/app/cache/*
-/app/config/parameters.yml
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
-/build/
-/vendor/
-/bin/
-/composer.phar
+# Bootstrap
+app/bootstrap.php.cache
+
+# Symfony directories
+app/SymfonyRequirements.php
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+web/js/*
+web/css/*
+web/media/*
+
+# Configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+web/config.php
+
+# IDE files
+*.sw[op]
+/nbproject/
+.idea/
+.project
+.settings
+atlassian-ide-plugin.xml
+
+# Ant files
+cache.properties
+build/
+
+# OS X
+._*
+.DS_Store
+.Trashes
+
+# SASS
+.sass-cache/
+
+bin/
