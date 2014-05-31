@@ -11,7 +11,13 @@
 		height: 100%;
 		bottom: 0;
 		padding: 0 20px;
+		background: url(/images/bcg-list-overlay.png) 0 bottom repeat-x;
 		@include box-sizing(border);
+		.desc-content {
+			width: 100%;
+			position: absolute;
+			bottom: 20px;
+		}
 	}
 
 	.icons {
@@ -47,9 +53,19 @@
 	}
 
 
-	h1 {
+	.heading {
 		font-size: 20px;
 		font-weight: 300;
 		color: $white;
+		@include transition(300ms);
+		@include min-screen($tablet-portrait) {
+			font-size: 24px;
+		}
+		@include min-screen($tablet-landscape) {
+			font-size: 30px;
+		}
+		@include min-screen($desktop) {
+			font-size: 34px;
+		}
 	}
 }
