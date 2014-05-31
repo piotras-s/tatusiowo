@@ -22,7 +22,7 @@ class ActivityRepository extends EntityRepository
                 JOIN a.activityDone ad
                 WHERE ad.user = ?1'
             )
-            ->setParameter(1, $user->getId())
+            ->setParameter(1, $user)
             ->getResult();
 
         return $activities;
