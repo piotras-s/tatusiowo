@@ -160,6 +160,146 @@ class LoadImageData extends AbstractFixture implements OrderedFixtureInterface
                 'type'   => Image::TYPE_ACTIVITY,
                 'width'  => 355,
                 'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
+            ],
+            [
+                'title'  => 'Bike',
+                'name'   => '2.jpg',
+                'type'   => Image::TYPE_ITEM,
+                'width'  => 266,
+                'height' => 266
             ]
         ];
 
@@ -181,7 +321,7 @@ class LoadImageData extends AbstractFixture implements OrderedFixtureInterface
                 $image->setTypeItem();
             }
 
-            $this->addReference(sprintf('image-%d', $k), $image);
+            $this->addReference(sprintf('image-%d-%d', $data['type'], ($k % 20)), $image);
 
             $manager->persist($image);
         }
