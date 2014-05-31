@@ -39,7 +39,7 @@ class User
     protected $password;
 
     /**
-     * @var Child[]|ArrayCollection
+     * @var \Tatusiowo\DemoBundle\Entity\Child[]|\Doctrine\Common\Collections\ArrayCollection
      *
      * @ORM\OneToMany(
      *  targetEntity="Tatusiowo\DemoBundle\Entity\Child",
@@ -51,7 +51,7 @@ class User
     protected $children;
 
     /**
-     * @var Point[]|ArrayCollection
+     * @var \Tatusiowo\DemoBundle\Entity\Point[]|\Doctrine\Common\Collections\ArrayCollection
      * @ORM\OneToMany(
      *  targetEntity="Tatusiowo\DemoBundle\Entity\Point",
      *  mappedBy="user",
@@ -108,7 +108,7 @@ class User
     }
 
     /**
-     * @return Child[]
+     * @return \Tatusiowo\DemoBundle\Entity\Child[]
      */
     public function getChildren()
     {
@@ -116,7 +116,7 @@ class User
     }
 
     /**
-     * @return Point[]
+     * @return \Tatusiowo\DemoBundle\Entity\Point[]
      */
     public function getUserPoints()
     {
@@ -125,51 +125,56 @@ class User
 
     /**
      * @param string $name
-     * @return User
+     * @return \Tatusiowo\DemoBundle\Entity\User
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
     /**
      * @param string $email
-     * @return User
+     * @return \Tatusiowo\DemoBundle\Entity\User|User
      */
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
     /**
      * @param string $password
-     * @return User
+     * @return \Tatusiowo\DemoBundle\Entity\User
      */
     public function setPassword($password)
     {
         $this->password = $password;
+
         return $this;
     }
 
     /**
      * @param string $surname
-     * @return User
+     * @return \Tatusiowo\DemoBundle\Entity\User
      */
     public function setSurname($surname)
     {
         $this->surname = $surname;
+
         return $this;
     }
 
     /**
-     * @param Child $child
-     * @return User
+     * @param \Tatusiowo\DemoBundle\Entity\Child $child
+     * @return \Tatusiowo\DemoBundle\Entity\User
      */
     public function addChildren(Child $child)
     {
         $this->children->add($child);
+
         return $this;
     }
 }

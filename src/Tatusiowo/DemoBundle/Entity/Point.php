@@ -85,7 +85,7 @@ class Point
 
     /**
      * @param string $type
-     * @return string
+     * @return \Tatusiowo\DemoBundle\Entity\Point
      */
     public function setType($type)
     {
@@ -96,7 +96,7 @@ class Point
 
     /**
      * @param \Tatusiowo\DemoBundle\Entity\User $user
-     * @return \Tatusiowo\DemoBundle\Entity\User
+     * @return \Tatusiowo\DemoBundle\Entity\Point
      */
     public function setUser(User $user)
     {
@@ -107,7 +107,7 @@ class Point
 
     /**
      * @param int $value
-     * @return int
+     * @return \Tatusiowo\DemoBundle\Entity\Point
      */
     public function setValue($value)
     {

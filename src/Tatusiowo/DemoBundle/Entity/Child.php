@@ -82,7 +82,7 @@ class Child
 
     /**
      * @param \Tatusiowo\DemoBundle\Entity\User $parent
-     * @return \Tatusiowo\DemoBundle\Entity\User
+     * @return \Tatusiowo\DemoBundle\Entity\Child
      */
     public function setParent($parent)
     {
@@ -93,7 +93,7 @@ class Child
 
     /**
      * @param string $sex
-     * @return string
+     * @return \Tatusiowo\DemoBundle\Entity\Child
      */
     public function setSex($sex)
     {
@@ -104,7 +104,7 @@ class Child
 
     /**
      * @param \DateTime $birthDate
-     * @return \DateTime
+     * @return \Tatusiowo\DemoBundle\Entity\Child
      */
     public function setBirthDate(\DateTime $birthDate)
     {
