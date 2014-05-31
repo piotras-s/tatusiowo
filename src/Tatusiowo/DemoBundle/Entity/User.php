@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="Tatusiowo\DemoBundle\Repository\UserRepository")
  * @ORM\Table(name="user")
  */
 class User
@@ -62,15 +62,15 @@ class User
     protected $userPoints;
 
     /**
-     * @ORM\OneToMany(targetEntity="Tatusiowo\DemoBundle\Entity\ActivitiesDone", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Tatusiowo\DemoBundle\Entity\ActivityDone", mappedBy="user")
      */
-    protected $activitiesDone;
+    protected $activityDone;
 
     /**
      * @var ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\Activity", mappedBy="userToDoActivities")
+     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\Activity", mappedBy="userToDoActivity")
      */
-    protected $activitiesToDo;
+    protected $activityToDo;
 
     function __construct()
     {

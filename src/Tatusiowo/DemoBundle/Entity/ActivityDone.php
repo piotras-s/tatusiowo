@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity()
  * @ORM\Table("activities_done")
  */
-class ActivitiesDone
+class ActivityDone
 {
 
     /**
@@ -21,15 +21,15 @@ class ActivitiesDone
     /**
      * @ORM\ManyToOne(
      *  targetEntity="Tatusiowo\DemoBundle\Entity\User",
-     *  inversedBy="activitiesDone"
+     *  inversedBy="activityDone"
      * )
      */
     protected $user;
 
     /**
      * @ORM\ManyToOne(
-     *  targetEntity="Tatusiowo\DemoBundle\Entity\User",
-     *  inversedBy="userDoneActivities"
+     *  targetEntity="Tatusiowo\DemoBundle\Entity\Activity",
+     *  inversedBy="activityDone"
      * )
      */
     protected $activity;
@@ -39,7 +39,6 @@ class ActivitiesDone
      * @ORM\Column(type="boolean")
      */
     protected $liked;
-
 
     /**
      * @var \DateTime
@@ -90,7 +89,7 @@ class ActivitiesDone
     /**
      * @param \Tatusiowo\DemoBundle\Entity\Activity $activity
      *
-     * @return \Tatusiowo\DemoBundle\Entity\ActivitiesDone
+     * @return \Tatusiowo\DemoBundle\Entity\ActivityDone
      */
     public function setActivity(Activity $activity)
     {
@@ -101,7 +100,7 @@ class ActivitiesDone
 
     /**
      * @param \Tatusiowo\DemoBundle\Entity\User $user
-     * @return \Tatusiowo\DemoBundle\Entity\ActivitiesDone
+     * @return \Tatusiowo\DemoBundle\Entity\ActivityDone
      */
     public function setUser(User $user)
     {
@@ -112,7 +111,7 @@ class ActivitiesDone
 
     /**
      * @param \DateTime $createdAt
-     * @return \Tatusiowo\DemoBundle\Entity\ActivitiesDone
+     * @return \Tatusiowo\DemoBundle\Entity\ActivityDone
      */
     public function setCreatedAt($createdAt)
     {
@@ -124,11 +123,12 @@ class ActivitiesDone
     /**
      * @param boolean $liked
      *
-     * @return \Tatusiowo\DemoBundle\Entity\ActivitiesDone
+     * @return \Tatusiowo\DemoBundle\Entity\ActivityDone
      */
     public function setLiked($liked)
     {
         $this->liked = $liked;
+
         return $this;
     }
 }
