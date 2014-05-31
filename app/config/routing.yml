@@ -1,0 +1,5 @@
+demo:
+    resource: "@DemoBundle/Controller/ActivityController.php"
+    type:     annotation
+    prefix:   /activity
+
