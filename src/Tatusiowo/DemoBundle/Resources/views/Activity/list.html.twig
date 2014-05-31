@@ -1,1 +1,114 @@
-Hello!
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% block stylesheets %}
+            {% stylesheets
+	            '@DemoBundle/Resources/public/css/style.css'
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock stylesheets %}
+        <script type="text/javascript" src="//use.typekit.net/xel3txy.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+		<header class="header wrapper">
+			<div class="grid">
+				<div class="grid__item one-half tablet-portrait--three-quarters">
+					logo
+				</div><!--
+				--><div class="grid__item one-half tablet-portrait--one-quarter">
+					<a class="menu-button jsNav" href="#sidr">
+						<span class="trigger"></span>
+					</a>
+
+					<div id="sidr">
+						<ul>
+							<li><a href="#">List 1</a></li>
+							<li class="active"><a href="#">List 2</a></li>
+							<li><a href="#">List 3</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section class="activities-list wrapper">
+			<div class="grid grid--full">
+				<article class="grid__item tablet-portrait--one-half">
+					<a href="#" class="list-item">
+						<img src="/images/photo-1.jpg" alt="Najwyższa wieża świata">
+						<div class="desc">
+							<h1>Najwyższa wieża na świecie</h1>
+							<div class="grid">
+								<div class="grid__item three-quarters">
+									<ul class="icons">
+										<li class="ico ico-time">20min</li>
+										<li class="ico ico-fun">3/5</li>
+										<li class="ico ico-creative">5/5</li>
+										<li class="ico ico-sport">4/5</li>
+									</ul>
+								</div><!--
+								--><div class="grid__item one-quarter">
+									<span class="ico ico-like">1244</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</article><!--
+				--><article class="grid__item tablet-portrait--one-half">
+					<div class="list-item">
+						<img src="/images/photo-2.jpg" alt="Najwyższa wieża świata">
+						<div class="desc"></div>
+					</div>
+				</article><!--
+				--><article class="grid__item tablet-portrait--one-half">
+					<div class="list-item">
+						<img src="/images/photo-3.jpg" alt="Najwyższa wieża świata">
+						<div class="desc"></div>
+					</div>
+				</article><!--
+				--><article class="grid__item tablet-portrait--one-half">
+					<div class="list-item">
+						<img src="/images/photo-2.jpg" alt="Najwyższa wieża świata">
+						<div class="desc"></div>
+					</div>
+				</article><!--
+				--><article class="grid__item tablet-portrait--one-half">
+					<div class="list-item">
+						<img src="/images/photo-3.jpg" alt="Najwyższa wieża świata">
+						<div class="desc"></div>
+					</div>
+				</article><!--
+				--><article class="grid__item tablet-portrait--one-half">
+					<div class="list-item">
+						<img src="/images/photo-1.jpg" alt="Najwyższa wieża świata">
+						<div class="desc"></div>
+					</div>
+				</article>
+			</div>
+		</section>
+		
+
+		{% block javascripts %}
+	        {% javascripts
+		        '@DemoBundle/Resources/public/js/vendor/modernizr-2.8.0.min.js'
+                '@DemoBundle/Resources/public/js/vendor/jquery-1.11.1.min.js'
+                '@DemoBundle/Resources/public/js/vendor/jquery.sidr.min.js'
+               	'@DemoBundle/Resources/public/js/main.js'
+	        %}
+	        <script src="{{ asset_url }}"></script>
+	        {% endjavascripts %}
+	    {% endblock %}
+    </body>
+</html>
