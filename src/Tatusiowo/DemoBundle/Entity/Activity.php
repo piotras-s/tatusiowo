@@ -97,6 +97,13 @@ class Activity
     protected $approved;
 
     /**
+     * @var Image
+     * @ORM\OneToOne(targetEntity="Tatusiowo\DemoBundle\Entity\Image")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
+     **/
+    protected $image;
+
+    /**
      * @var \DateTime
      * @ORM\Column(name="created_at", type="datetime", nullable=false)
      */
@@ -226,6 +233,14 @@ class Activity
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * @return Image
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
     /**
@@ -396,4 +411,16 @@ class Activity
         return $this;
     }
 
-} 
+    /**
+     * @param Image $image
+     *
+     * @return $this
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+}
