@@ -20,7 +20,16 @@ $(function(){
         if(this.VARS.NAV.length) {
             this.navigation(this.VARS.NAV);
         }
+
+        $(document).on('click', function(e){
+            if(!$(event.target).closest('#sidr').length && $('body').hasClass('sidr-open')) {
+                $('body').removeClass('sidr-open');
+				$.sidr('close');
+	        }
+        });
 	};
+
+
 
 	Daddy.init();
 
