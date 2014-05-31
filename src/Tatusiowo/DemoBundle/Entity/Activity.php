@@ -33,12 +33,14 @@ class Activity
     /**
      * @var int
      * @ORM\Column(name="time_from", type="smallint", nullable=false)
+     * @Assert\NotBlank()
      */
     protected $timeFrom;
 
     /**
      * @var int
      * @ORM\Column(name="time_to", type="smallint", nullable=false)
+     * @Assert\NotBlank()
      */
     protected $timeTo;
 
@@ -51,6 +53,7 @@ class Activity
     /**
      * @var int
      * @ORM\Column(name="age_to", type="smallint", nullable=false)
+     * @Assert\NotBlank()
      */
     protected $ageTo;
 
@@ -69,24 +72,28 @@ class Activity
     /**
      * @var int
      * @ORM\Column(name="fun", type="smallint", nullable=false)
+     * @Assert\NotBlank()
      */
     protected $fun;
 
     /**
      * @var int
      * @ORM\Column(name="creativity", type="smallint", nullable=false)
+     * @Assert\NotBlank()
      */
     protected $creativity;
 
     /**
      * @var int
      * @ORM\Column(name="effort", type="smallint", nullable=false)
+     * @Assert\NotBlank()
      */
     protected $effort;
 
     /**
      * @var string
      * @ORM\Column(name="description", type="text", nullable=false)
+     * @Assert\NotBlank()
      */
     protected $description;
 
@@ -434,7 +441,7 @@ class Activity
      *
      * @return $this
      */
-    public function setImage($image)
+    public function setImage(Image $image)
     {
         $this->image = $image;
 

@@ -48,12 +48,18 @@ class Image
     /**
      * @var int
      * @ORM\Column(name="width", type="smallint", nullable=false)
+     * @Assert\GreaterThan(
+     *     value = 0
+     * )
      */
     protected $width;
 
     /**
      * @var int
      * @ORM\Column(name="height", type="smallint", nullable=false)
+     * @Assert\GreaterThan(
+     *     value = 0
+     * )
      */
     protected $height;
 
