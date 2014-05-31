@@ -67,7 +67,6 @@ class User
         $this->userPoints = new ArrayCollection();
     }
 
-
     /**
      * @return int
      */
@@ -124,8 +123,6 @@ class User
         return $this->userPoints;
     }
 
-
-
     /**
      * @param string $name
      * @return User
@@ -137,7 +134,7 @@ class User
     }
 
     /**
-     * @param mixed $email
+     * @param string $email
      * @return User
      */
     public function setEmail($email)
@@ -147,7 +144,7 @@ class User
     }
 
     /**
-     * @param mixed $password
+     * @param string $password
      * @return User
      */
     public function setPassword($password)
@@ -157,7 +154,7 @@ class User
     }
 
     /**
-     * @param mixed $surname
+     * @param string $surname
      * @return User
      */
     public function setSurname($surname)

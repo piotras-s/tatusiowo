@@ -10,6 +10,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Point
 {
+    const TYPE_ACTIVITY_DONE = 'activity_done';
+    const TYPE_ACTIVITY_PROPOSED = 'activity_proposed';
+    const TYPE_USER_REGISTERED = 'user_registered';
+
 
     /**
      * @ORM\Id
@@ -37,7 +41,7 @@ class Point
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=32, nullable=false)
+     * @ORM\Column(type="string", length=32)
      */
     protected $type;
 
@@ -86,6 +90,7 @@ class Point
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -93,9 +98,10 @@ class Point
      * @param \Tatusiowo\DemoBundle\Entity\User $user
      * @return \Tatusiowo\DemoBundle\Entity\User
      */
-    public function setUser($user)
+    public function setUser(User $user)
     {
         $this->user = $user;
+
         return $this;
     }
 
@@ -106,6 +112,7 @@ class Point
     public function setValue($value)
     {
         $this->value = $value;
+
         return $this;
     }
 

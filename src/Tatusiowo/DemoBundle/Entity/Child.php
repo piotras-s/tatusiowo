@@ -10,6 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Child
 {
+    const SEX_MALE = 'sex_male';
+    const SEX_FEMALE = 'sex_female';
 
     /**
      * @ORM\Id
@@ -20,11 +22,13 @@ class Child
 
     /**
      * @var \DateTime
+     * @ORM\Column(type="datetime")
      */
     protected $birthDate;
 
     /**
-     * @var int
+     * @var string
+     * @ORM\Column(type="string")
      */
     protected $sex;
 
@@ -45,7 +49,7 @@ class Child
     protected $parent;
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -61,7 +65,7 @@ class Child
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getSex()
     {
@@ -83,16 +87,18 @@ class Child
     public function setParent($parent)
     {
         $this->parent = $parent;
+
         return $this;
     }
 
     /**
-     * @param int $sex
-     * @return int
+     * @param string $sex
+     * @return string
      */
     public function setSex($sex)
     {
         $this->sex = $sex;
+
         return $this;
     }
 
@@ -100,9 +106,10 @@ class Child
      * @param \DateTime $birthDate
      * @return \DateTime
      */
-    public function setBirthDate($birthDate)
+    public function setBirthDate(\DateTime $birthDate)
     {
         $this->birthDate = $birthDate;
+
         return $this;
     }
 }
