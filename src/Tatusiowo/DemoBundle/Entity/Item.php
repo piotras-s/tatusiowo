@@ -6,6 +6,7 @@
 
 namespace Tatusiowo\DemoBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -37,6 +38,12 @@ class Item
     protected $image;
 
     /**
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\Activity", mappedBy="activities")
+     */
+    protected $activities;
+
+    /**
      * @return int
      */
     public function getId()
@@ -61,6 +68,14 @@ class Item
     }
 
     /**
+     * @return Activity[]
+     */
+    public function getActivities()
+    {
+        return $this->activities;
+    }
+
+    /**
      * @param Image $image
      *
      * @return $this
@@ -80,6 +95,18 @@ class Item
     public function setName($name)
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param Activity $activity
+     *
+     * @return $this
+     */
+    public function addActivity(Activity $activity)
+    {
+        $this->activities[] = $activity;
 
         return $this;
     }

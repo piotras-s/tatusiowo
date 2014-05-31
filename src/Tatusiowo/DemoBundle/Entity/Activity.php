@@ -6,6 +6,7 @@
 
 namespace Tatusiowo\DemoBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use \DateTime;
@@ -102,6 +103,16 @@ class Activity
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=false)
      **/
     protected $image;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\Item", inversedBy="items")
+     * @ORM\JoinTable(name="activities_items",
+     *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="item_id", referencedColumnName="id")}
+     * )
+     */
+    protected $items;
 
     /**
      * @var \DateTime
@@ -241,6 +252,14 @@ class Activity
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * @return Item[]
+     */
+    public function getItems()
+    {
+        return $this->items;
     }
 
     /**
@@ -419,6 +438,18 @@ class Activity
     public function setImage($image)
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * @param Item $item
+     *
+     * @return $this
+     */
+    public function addItem(Item $item)
+    {
+        $this->items[] = $item;
 
         return $this;
     }
