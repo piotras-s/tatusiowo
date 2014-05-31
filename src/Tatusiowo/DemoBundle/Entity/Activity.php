@@ -1,10 +1,10 @@
 <?php
 
-namespace Tatusiowo\DemoBundle\Entity;
-
 /**
  * @author Sergiusz Michalik <sergiusz.michalik@xsolve.pl>
  */
+
+namespace Tatusiowo\DemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
