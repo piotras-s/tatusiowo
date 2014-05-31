@@ -31,11 +31,10 @@ twig:
 
 # Assetic Configuration
 assetic:
+    bundles:
+        - DemoBundle
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles: 
-        - TatusiowoDemoBundle
-    #java: /usr/bin/java
     filters:
         cssrewrite: ~
         #closure:
