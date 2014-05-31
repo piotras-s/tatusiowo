@@ -8,6 +8,7 @@ namespace Tatusiowo\DemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use \DateTime;
 
 /**
  * @ORM\Entity
@@ -230,7 +231,7 @@ class Activity
     /**
      * @param int $ageFrom
      *
-     * @return int
+     * @return $this
      */
     public function setAgeFrom($ageFrom)
     {
@@ -242,7 +243,7 @@ class Activity
     /**
      * @param int $ageTo
      *
-     * @return int
+     * @return $this
      */
     public function setAgeTo($ageTo)
     {
@@ -254,7 +255,7 @@ class Activity
     /**
      * @param boolean $approved
      *
-     * @return boolean
+     * @return $this
      */
     public function setApproved($approved)
     {
@@ -266,7 +267,7 @@ class Activity
     /**
      * @param DateTime $approvedAt
      *
-     * @return DateTime
+     * @return $this
      */
     public function setApprovedAt($approvedAt)
     {
@@ -278,7 +279,7 @@ class Activity
     /**
      * @param DateTime $createdAt
      *
-     * @return DateTime
+     * @return $this
      */
     public function setCreatedAt($createdAt)
     {
@@ -290,7 +291,7 @@ class Activity
     /**
      * @param int $creativity
      *
-     * @return int
+     * @return $this
      */
     public function setCreativity($creativity)
     {
@@ -302,7 +303,7 @@ class Activity
     /**
      * @param string $description
      *
-     * @return string
+     * @return $this
      */
     public function setDescription($description)
     {
@@ -314,7 +315,7 @@ class Activity
     /**
      * @param int $effort
      *
-     * @return int
+     * @return $this
      */
     public function setEffort($effort)
     {
@@ -326,7 +327,7 @@ class Activity
     /**
      * @param int $fun
      *
-     * @return int
+     * @return $this
      */
     public function setFun($fun)
     {
@@ -338,7 +339,7 @@ class Activity
     /**
      * @param boolean $indoor
      *
-     * @return boolean
+     * @return $this
      */
     public function setIndoor($indoor)
     {
@@ -350,7 +351,7 @@ class Activity
     /**
      * @param boolean $outdoor
      *
-     * @return boolean
+     * @return $this
      */
     public function setOutdoor($outdoor)
     {
@@ -362,7 +363,7 @@ class Activity
     /**
      * @param int $timeFrom
      *
-     * @return int
+     * @return $this
      */
     public function setTimeFrom($timeFrom)
     {
@@ -374,7 +375,7 @@ class Activity
     /**
      * @param int $timeTo
      *
-     * @return int
+     * @return $this
      */
     public function setTimeTo($timeTo)
     {
@@ -386,7 +387,7 @@ class Activity
     /**
      * @param string $title
      *
-     * @return string
+     * @return $this
      */
     public function setTitle($title)
     {

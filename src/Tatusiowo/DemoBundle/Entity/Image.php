@@ -8,6 +8,7 @@ namespace Tatusiowo\DemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use \DateTime;
 
 /**
  * @ORM\Entity
@@ -122,7 +123,7 @@ class Image
     /**
      * @param DateTime $createdAt
      *
-     * @return DateTime
+     * @return $this
      */
     public function setCreatedAt($createdAt)
     {
@@ -134,7 +135,7 @@ class Image
     /**
      * @param int $height
      *
-     * @return int
+     * @return $this
      */
     public function setHeight($height)
     {
@@ -146,7 +147,7 @@ class Image
     /**
      * @param string $name
      *
-     * @return string
+     * @return $this
      */
     public function setName($name)
     {
@@ -158,7 +159,7 @@ class Image
     /**
      * @param string $title
      *
-     * @return string
+     * @return $this
      */
     public function setTitle($title)
     {
@@ -170,7 +171,7 @@ class Image
     /**
      * @param int $width
      *
-     * @return int
+     * @return $this
      */
     public function setWidth($width)
     {
