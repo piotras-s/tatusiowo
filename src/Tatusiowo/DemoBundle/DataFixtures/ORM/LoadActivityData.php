@@ -10,6 +10,7 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Tatusiowo\DemoBundle\Entity\Activity;
+use Tatusiowo\DemoBundle\Entity\Image;
 
 class LoadActivityData extends AbstractFixture implements OrderedFixtureInterface
 {
@@ -48,7 +49,7 @@ class LoadActivityData extends AbstractFixture implements OrderedFixtureInterfac
             $date = new \DateTime();
             $date->setTimestamp((rand(time() - 10000000, time())));
 
-            $image = $this->getReference(sprintf('image-%d', $k));
+            $image = $this->getReference(sprintf('image-%s-%d', Image::TYPE_ACTIVITY, $k));
 
             $activity
                 ->setTitle($data['title'])
