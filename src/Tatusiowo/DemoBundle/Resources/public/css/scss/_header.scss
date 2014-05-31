@@ -1,0 +1,64 @@
+.header {
+	.logo {
+
+	}
+
+	.menu-button {
+		display: block;
+		width: 40px;
+		height: 40px;
+		padding: 10px;
+		float: right;
+		font-size: 14px;
+		font-weight: 600;
+		text-align: right;
+		color: $violet;
+		@include box-sizing(border);
+		.nav-open & {
+			color: $white;
+		}
+		.trigger {
+			display: inline-block;
+			margin-left: 6px;
+			background-color: $violet;
+			width: 25px;
+			height: 3px;
+			vertical-align: middle;
+			position: relative;
+			right: 10px;
+			.sidr-open & {
+				@include transform(translateY(-50px));
+				&:before {
+					@include transform(translateY(50px) rotate(45deg));
+				}
+				&:after {
+					@include transform(translateY(50px) rotate(-45deg));
+				}
+			}
+			@include transition(300ms);
+			&:before,
+			&:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $violet;
+				@include transition(300ms);
+			}
+			.navigation-active & {
+				background-color: $white;
+				&:before,
+				&:after {
+					background-color: $white;
+				}
+			}
+			&:before {
+				@include transform(translateY(-7px));
+			}
+			&:after {
+				@include transform(translateY(7px));
+			}
+		}
+	}
+}
