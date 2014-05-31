@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class ActivityController extends Controller
 {
     /**
-     * @Route("/list", name="b2b_console_user_admin_edit_privilege", requirements={"id" = "\d+"})
+     * @Route("/list", name="tatusiowo_activity_list")
      *
      * @return \Symfony\Component\HttpFoundation\Response
      * @Template()
