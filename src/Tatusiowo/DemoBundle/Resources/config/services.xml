@@ -8,11 +8,6 @@
         <parameter key="tatusiowo_activity_manager.class">Tatusiowo\DemoBundle\Service\ActivityManager</parameter>
     </parameters>
     <services>
-        <service id="tatusiowo_activity_repository" class="%tatusiowo_activity_repository.class%">
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
-        </service>
-
         <!-- Activity repository -->
         <service id="tatusiowo_activity_repository"
                  class="Doctrine\ORM\EntityRepository"

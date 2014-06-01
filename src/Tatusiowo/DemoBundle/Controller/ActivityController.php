@@ -17,8 +17,7 @@ class ActivityController extends BaseController
     public function listAction()
     {
         return [
-            'activities' => $this->getDoctrine()->getRepository('DemoBundle:Activity')->findAll(),
-            'user' => $this->getFakeUser()
+            'activities' => $this->getDoctrine()->getRepository('DemoBundle:Activity')->findAll()
         ];
     }
 }
