@@ -27,10 +27,6 @@ class ActivityDoneRepository extends EntityRepository
             ->setParameter(2, true)
             ->getResult();
 
-        print_r($counts);
-
-//        die();
-
         return $counts;
     }
 
