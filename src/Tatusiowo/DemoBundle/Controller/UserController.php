@@ -18,4 +18,14 @@ class UserController extends Controller
     {
         return [];
     }
+
+    /**
+     * @Route("/login", name="tatusiowo_user_login")
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Template()
+     */
+    public function loginAction(){
+        return [];
+    }
 }

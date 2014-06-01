@@ -1,3 +1,8 @@
+demo_main_activity:
+    resource: "@DemoBundle/Controller/MainController.php"
+    type:     annotation
+    prefix:   /
+
 demo_activity:
     resource: "@DemoBundle/Controller/ActivityController.php"
     type:     annotation

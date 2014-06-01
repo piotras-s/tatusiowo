@@ -6,18 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class ActivityController extends BaseController
+class MainController extends Controller
 {
     /**
-     * @Route("/list", name="tatusiowo_activity_list")
+     * @Route("/homepage", name="homepage")
      *
      * @return \Symfony\Component\HttpFoundation\Response
      * @Template()
      */
-    public function listAction()
+    public function homepageAction()
     {
-        return [
-            'activities' => $this->getDoctrine()->getRepository('DemoBundle:Activity')->findAll()
-        ];
+        return [];
     }
 }
