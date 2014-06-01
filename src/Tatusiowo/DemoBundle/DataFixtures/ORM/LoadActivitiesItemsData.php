@@ -21,7 +21,7 @@ class LoadActivitiesItemsData extends AbstractFixture implements OrderedFixtureI
      */
     function load(ObjectManager $manager)
     {
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 7; $i++) {
             /** @var Activity $activity */
             $activity = $this->getReference(sprintf('activity-%d', $i));
 
