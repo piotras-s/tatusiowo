@@ -21,7 +21,7 @@ class ActivityDone
     /**
      * @ORM\ManyToOne(
      *  targetEntity="Tatusiowo\DemoBundle\Entity\User",
-     *  inversedBy="activityDone"
+     *  inversedBy="activitiesDone"
      * )
      */
     protected $user;
@@ -29,7 +29,7 @@ class ActivityDone
     /**
      * @ORM\ManyToOne(
      *  targetEntity="Tatusiowo\DemoBundle\Entity\Activity",
-     *  inversedBy="activityDone"
+     *  inversedBy="activitiesDone"
      * )
      */
     protected $activity;

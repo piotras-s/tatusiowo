@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class ActivityController extends Controller
+class ActivityController extends BaseController
 {
     /**
      * @Route("/list", name="tatusiowo_activity_list")
@@ -16,6 +16,6 @@ class ActivityController extends Controller
      */
     public function listAction()
     {
-        return [];
+        return ['user' => $this->getFakeUser()];
     }
 }
