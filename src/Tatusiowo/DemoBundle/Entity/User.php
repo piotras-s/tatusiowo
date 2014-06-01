@@ -4,12 +4,13 @@ namespace Tatusiowo\DemoBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * @ORM\Entity(repositoryClass="Tatusiowo\DemoBundle\Repository\UserRepository")
  * @ORM\Table(name="user")
  */
-class User
+class User extends BaseUser
 {
     /**
      * @ORM\Id
@@ -17,26 +18,6 @@ class User
      * @ORM\Column(type="integer")
      */
     protected $id;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $email;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $name;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $surname;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $password;
 
     /**
      * @var \Tatusiowo\DemoBundle\Entity\Child[]|\Doctrine\Common\Collections\ArrayCollection
@@ -62,64 +43,95 @@ class User
     protected $userPoints;
 
     /**
+     * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="Tatusiowo\DemoBundle\Entity\ActivityDone", mappedBy="user")
      */
-    protected $activityDone;
+    protected $activitiesDone;
 
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\Activity", mappedBy="userToDoActivity")
      */
-    protected $activityToDo;
+    protected $activitiesToDo;
 
     function __construct()
     {
+        parent::__construct();
+
         $this->children = new ArrayCollection();
         $this->userPoints = new ArrayCollection();
+        $this->activitiesDone = new ArrayCollection();
+        $this->activitiesToDo = new ArrayCollection();
     }
 
     /**
-     * @return int
+     * @param mixed $activityDone
      */
-    public function getId()
+    public function setActivitiesDone(ArrayCollection $activityDone)
     {
-        return $this->id;
+        $this->activitiesDone = $activityDone;
+
+        return $this;
     }
 
     /**
-     * @return string
+     * @param \Doctrine\Common\Collections\ArrayCollection $activityToDo
      */
-    public function getEmail()
+    public function setActivitiesToDo(ArrayCollection $activityToDo)
     {
-        return $this->email;
+        $this->activitiesToDo = $activityToDo;
+
+        return $this;
     }
 
     /**
-     * @return string
+     * @param \Doctrine\Common\Collections\ArrayCollection|\Tatusiowo\DemoBundle\Entity\Child[] $children
      */
-    public function getName()
+    public function setChildren(ArrayCollection $children)
     {
-        return $this->name;
+        $this->children = $children;
+
+        return $this;
     }
 
     /**
-     * @return string
+     * @param \Doctrine\Common\Collections\Collection $groups
      */
-    public function getPassword()
+    public function setGroups(ArrayCollection $groups)
     {
-        return $this->password;
+        $this->groups = $groups;
+
+        return $this;
     }
 
     /**
-     * @return string
+     * @param \Doctrine\Common\Collections\ArrayCollection|\Tatusiowo\DemoBundle\Entity\Point[] $userPoints
      */
-    public function getSurname()
+    public function setUserPoints(ArrayCollection $userPoints)
     {
-        return $this->surname;
+        $this->userPoints = $userPoints;
+
+        return $this;
     }
 
     /**
-     * @return \Tatusiowo\DemoBundle\Entity\Child[]
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getActivitiesDone()
+    {
+        return $this->activitiesDone;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getActivitiesToDo()
+    {
+        return $this->activitiesToDo;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection|\Tatusiowo\DemoBundle\Entity\Child[]
      */
     public function getChildren()
     {
@@ -135,56 +147,45 @@ class User
     }
 
     /**
-     * @param string $name
-     * @return \Tatusiowo\DemoBundle\Entity\User
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param string $email
-     * @return \Tatusiowo\DemoBundle\Entity\User|User
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * @param string $password
-     * @return \Tatusiowo\DemoBundle\Entity\User
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * @param string $surname
-     * @return \Tatusiowo\DemoBundle\Entity\User
-     */
-    public function setSurname($surname)
-    {
-        $this->surname = $surname;
-
-        return $this;
-    }
-
-    /**
-     * @param \Tatusiowo\DemoBundle\Entity\Child $child
-     * @return \Tatusiowo\DemoBundle\Entity\User
+     * @param Child $child
+     * @return $this
      */
     public function addChildren(Child $child)
     {
         $this->children->add($child);
+
+        return $this;
+    }
+
+    /**
+     * @param Point $point
+     * @return $this
+     */
+    public function addUserPoint(Point $point)
+    {
+        $this->userPoints->add($point);
+
+        return $this;
+    }
+
+    /**
+     * @param ActivityDone $activityDone
+     * @return $this
+     */
+    public function addActivityDone(ActivityDone $activityDone)
+    {
+        $this->activitiesDone->add($activityDone);
+
+        return $this;
+    }
+
+    /**
+     * @param Activity $activity
+     * @return $this
+     */
+    public function addActivityToDo(Activity $activity)
+    {
+        $this->activitiesToDo->add($activity);
 
         return $this;
     }
