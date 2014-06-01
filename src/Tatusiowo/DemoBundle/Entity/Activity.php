@@ -482,4 +482,10 @@ class Activity
     {
         return rand(231, 23143);
     }
+
+    public function getImageMockId()
+    {
+        // todo remove this method
+        return ($this->getId() % 3) + 1;
+    }
 }

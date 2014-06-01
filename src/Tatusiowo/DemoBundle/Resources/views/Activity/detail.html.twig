@@ -3,6 +3,7 @@
 {% block page_title %}{{ activity.title }}{% endblock %}
 
 {% block content %}
+
 <section class="single-activity grid">
     <article class="grid__item">
         <div>
@@ -35,9 +36,7 @@
     </article>
 </section>
 
-
 <div class="activity-steps">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, vitae, aperiam, non optio porro molestias sapiente harum repellendus modi cum similique beatae ipsum quod. Sit, minus, facere asperiores inventore aliquam veniam nihil quasi adipisci porro est quo ipsa et facilis!</p>
     <h2 class="heading">Co potrzebuję?</h2>
     <ul class="needed-eq">
     	<li>
@@ -46,12 +45,13 @@
     	</li>
     </ul>
     <h2 class="heading">Zasady gry</h2>
-    <ol>
+    <p>{{ activity.description|raw }}</p>
+    <!-- <ol>
         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, qui.</li>
         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, aliquam.</li>
         <li>Lorem ipsum dolor sit.</li>
         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, rem, possimus corporis soluta at temporibus!</li>
-    </ol>
+    </ol> -->
     <a href="#" class="start">Zaczynam zabawę</a>
     <a href="#" class="like">Lubię to</a>
 </div>

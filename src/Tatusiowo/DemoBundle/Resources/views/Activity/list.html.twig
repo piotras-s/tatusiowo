@@ -8,7 +8,7 @@
         {% for activity in activities | slice(0,6) %}<!--
         --><article class="grid__item tablet-portrait--one-half desktop--one-third wide-desktop--one-third">
             <a href="{{ path('tatusiowo_activity_detail', {'activityId': activity.id}) }}" class="list-item">
-                <img src="/images/photo-1.jpg" alt="{{ activity.image.title }}">
+                <img src="/images/photo-{{ activity.imageMockId }}.jpg" alt="{{ activity.image.title }}">
                 <div class="desc">
                     <div class="desc-content">
                         <h2 class="heading">{{ activity.title }}</h2>
