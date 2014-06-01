@@ -1,4 +1,32 @@
-{% extends "DemoBundle:Admin:layout.html.twig" %}
+{% extends('@Demo/layout.html.twig') %}
 {% block content %}
-    Search form
+	<form method="post" action="" class="search">
+		<div class="picture home">
+			<h1>Mam <span class="jsTime">20</span> <br> minut poza domem</h1>
+		</div>
+		<div class="picture outside">
+			<h1>Mam <span class="jsTime">20</span> <br> minut w domu</h1>
+		</div>
+		<div class="slider-container">
+			<div id="slider"></div>
+
+			<input type="text" id="minutes" name="minutes">
+			
+			<div class="checkboxes jsCheckboxes">
+				<div class="checkbox-item active jsHome" data-item="home">
+					<span class="ico ico-home"></span>
+					<em>w domu</em>
+					<input type="text" id="input-home" name="home">
+				</div>
+				<div class="checkbox-item jsOutside" data-item="outside">
+					<span class="ico ico-outside"></span>
+					<em>poza domem</em>
+					<input type="text" id="input-outside" name="outside">
+				</div>
+			</div>
+
+			<input type="submit" value="Szukaj">
+
+		</div>
+	</form> 
 {% endblock %}
