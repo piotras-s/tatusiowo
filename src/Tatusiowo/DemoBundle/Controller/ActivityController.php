@@ -3,6 +3,7 @@
 namespace Tatusiowo\DemoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Tatusiowo\DemoBundle\Entity\Activity;
@@ -27,12 +28,14 @@ class ActivityController extends BaseController
      *
      * @Route("/{activityId}", name="tatusiowo_activity_detail")
      *
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      * @Template()
      */
     public function detailAction($activityId)
     {
-        $activity = $this->findOneOrFail($activityId);
+        $activity = $this->findActivityOrFail($activityId);
 
         return ['activity' => $activity];
     }
@@ -40,11 +43,17 @@ class ActivityController extends BaseController
     /**
      * @param $activityId
      *
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     *
      * @return Activity
      */
-    private function findOneOrFail($activityId)
+    private function findActivityOrFail($activityId)
     {
         $activity = $this->get('tatusiowo_activity_repository')->find($activityId);
+
+        if (null === $activity) {
+            throw new NotFoundHttpException('Activity not found.');
+        }
 
         return $activity;
     }
