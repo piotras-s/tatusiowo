@@ -9,7 +9,7 @@ $(function(){
 
 	Daddy.navigation = function($elem){
 		$elem.sidr({
-			side: 'right',
+			side: 'left',
 			speed: 400
 		});
 	};
