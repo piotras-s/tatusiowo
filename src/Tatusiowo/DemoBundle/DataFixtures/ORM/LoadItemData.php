@@ -21,7 +21,7 @@ class LoadItemData extends AbstractFixture implements OrderedFixtureInterface
      */
     function load(ObjectManager $manager)
     {
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 7; $i++) {
             $image = $this->getReference(sprintf('image-%s-%d', Image::TYPE_ITEM, $i));
 
             $item = new Item();
