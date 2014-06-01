@@ -1,7 +1,9 @@
 .activities-list,
 .single-activity {
 	article {
-		position: relative;
+		> div {
+			position: relative;
+		}
 		img { 
 			width: 100%;
 		}
