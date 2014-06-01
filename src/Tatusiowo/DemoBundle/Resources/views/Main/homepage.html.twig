@@ -9,17 +9,23 @@
 		</div>
 		<div class="slider-container">
 			<div id="slider"></div>
+
+			<input type="text" id="minutes" name="minutes">
 			
-			<div class="checkboxes">
-				<div class="checkbox-item">
+			<div class="checkboxes jsCheckboxes">
+				<div class="checkbox-item active jsHome" data-item="home">
 					<span class="ico ico-home"></span>
 					w domu
+					<input type="text" id="input-home" name="home">
 				</div>
-				<div class="checkbox-item">
+				<div class="checkbox-item jsOutside" data-item="outside">
 					<span class="ico ico-outside"></span>
 					poza domem
+					<input type="text" id="input-outside" name="outside">
 				</div>
 			</div>
+
+			<input type="submit" value="Szukaj">
 
 		</div>
 	</form> 
