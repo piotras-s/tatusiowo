@@ -3,8 +3,56 @@
 {% block page_title %}{{ activity.title }}{% endblock %}
 
 {% block content %}
-<section class="activity-detail wrapper">
-    <div class="grid grid--full">
-    </div>
+<section class="single-activity grid">
+    <article class="grid__item">
+        <div>
+            <img src="/images/photo-1.jpg" alt="{{ activity.image.title }}">
+            <div class="desc">
+                <div class="desc-content">
+                    <h2 class="heading">{{ activity.title }}</h2>
+                    <div class="grid">
+                        <div class="grid__item three-quarters">
+                            <ul class="icons">
+                                <li class="ico ico-time">
+                                    {%  if activity.timeFrom == activity.timeTo %}
+                                        {{ activity.timeFrom }}
+                                    {% else %}
+                                        {{ activity.timeFrom }} - {{ activity.timeTo }}
+                                    {% endif %}
+                                    min</li>
+                                <li class="ico ico-fun">{{ activity.fun }}/5</li>
+                                <li class="ico ico-creative">{{ activity.creativity }}/5</li>
+                                <li class="ico ico-sport">{{ activity.effort }}/5</li>
+                            </ul>
+                        </div><!--
+                        --><div class="grid__item one-quarter">
+                            <span class="ico ico-like">{{ activity.like }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
 </section>
+
+
+<div class="activity-steps">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, vitae, aperiam, non optio porro molestias sapiente harum repellendus modi cum similique beatae ipsum quod. Sit, minus, facere asperiores inventore aliquam veniam nihil quasi adipisci porro est quo ipsa et facilis!</p>
+    <h2 class="heading">Co potrzebuję?</h2>
+    <ul class="needed-eq">
+    	<li>
+    		<img src="/images/icons/klocki.jpg" alt="">
+    		<span>klocki</span>
+    	</li>
+    </ul>
+    <h2 class="heading">Zasady gry</h2>
+    <ol>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, qui.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, aliquam.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, rem, possimus corporis soluta at temporibus!</li>
+    </ol>
+    <a href="#" class="start">Zaczynam zabawę</a>
+    <a href="#" class="like">Lubię to</a>
+</div>
 {% endblock %}

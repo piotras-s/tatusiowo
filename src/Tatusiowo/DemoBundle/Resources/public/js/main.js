@@ -7,7 +7,7 @@ $(function(){
 		NAV: $('.jsNav'),
 	};
 
-	Daddy.navigation = function($elem){
+	Daddy.navigation = function($elem) {
 		$elem.sidr({
 			side: 'left',
 			speed: 400
@@ -33,9 +33,26 @@ $(function(){
 				$('#minutes').val(pct);
 			}
 		});
+	};
 
+	Daddy.infiniteScroll = function($elem) {
+		var loading = false;
 
-	}
+		$(window).on('scroll', function(){
+			if ($(window).scrollTop() >= ($(document).height() - $(window).height())) {
+
+				if(!loading) {
+					var $articles = $elem.find('>article').slice(0,6).clone();
+					$elem.append($articles);
+					loading = true;
+				}
+
+				setTimeout(function(){
+					loading = false;
+				}, 1000);
+			}
+		});
+	};
 
 	Daddy.init = function() {
 		var $window = $(window);
@@ -53,6 +70,10 @@ $(function(){
 
         if($('#slider').length) {
         	Daddy.slider();
+        }
+
+        if($('.jsActiveList').length) {
+        	Daddy.infiniteScroll($('.jsActiveList'));
         }
 
         if($('.jsCheckboxes').length) {
