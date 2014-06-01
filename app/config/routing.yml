@@ -1,5 +1,5 @@
 demo_main_activity:
-    resource: "@DemoBundle/Controller/MainController.php"
+    resource: "@DemoBundle/Controller/SearchController.php"
     type:     annotation
     prefix:   /
 
@@ -11,7 +11,7 @@ demo_activity:
 demo_user:
     resource: "@DemoBundle/Controller/UserController.php"
     type:     annotation
-    prefix:   /user
+    prefix:   /
 
 demo_admin_activity:
     resource: "@DemoBundle/Controller/Admin/ActivityController.php"

@@ -6,15 +6,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class MainController extends Controller
+class SearchController extends Controller
 {
     /**
-     * @Route("/homepage", name="homepage")
+     * @Route("/search", name="tatusiowo_activity_search")
      *
      * @return \Symfony\Component\HttpFoundation\Response
      * @Template()
      */
-    public function homepageAction()
+    public function searchAction()
     {
         return [];
     }
