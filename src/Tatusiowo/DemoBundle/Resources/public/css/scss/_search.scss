@@ -1,5 +1,6 @@
 .search {
 	background-color: #1a0f22;
+	padding-bottom: 80px;
 	.picture {
 		max-width: 100%;
 		height: 423px;
@@ -62,6 +63,11 @@
 						background-image: url(/images/icons/ico-outside.png);
 					}
 				}
+				em {
+					display: block;
+					margin-top: 6px;
+					font-style: normal;
+				}
 				&.active {
 					color: #95a527;
 					.ico {
@@ -79,7 +85,6 @@
 			background: #c32c61;
 			display: block;
 			margin-top: 30px;
-			margin-bottom: 30px;
 			width: 100%;
 			height: 60px;
 			color: $white;

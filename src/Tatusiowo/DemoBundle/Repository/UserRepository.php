@@ -20,7 +20,7 @@ class UserRepository extends EntityRepository
             ->createQuery(
                 'SELECT u
                 FROM DemoBundle:User u
-                JOIN u.activityDone ad
+                JOIN u.activitiesDone ad
                 WHERE ad.activity = ?1'
             )
             ->setParameter(1, $activity)
