@@ -19,7 +19,7 @@ class ActivityRepository extends EntityRepository
         $activities = $this->getEntityManager()
             ->createQuery('SELECT a
                 FROM DemoBundle:Activity a
-                JOIN a.activityDone ad
+                JOIN a.activitiesDone ad
                 WHERE ad.user = ?1'
             )
             ->setParameter(1, $user)

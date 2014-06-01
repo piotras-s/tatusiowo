@@ -127,7 +127,7 @@ class Activity
 
     /**
      * @var ArrayCollection
-     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\User", inversedBy="activityToDo")
+     * @ORM\ManyToMany(targetEntity="Tatusiowo\DemoBundle\Entity\User", inversedBy="activitiesToDo")
      * @ORM\JoinTable(name="activities_to_do",
      *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="item_id", referencedColumnName="id")}
