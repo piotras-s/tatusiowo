@@ -14,6 +14,25 @@ $(function(){
 		});
 	};
 
+	Daddy.slider = function($elem) {
+		$('#slider').sGlide({
+			height: 10,
+			image: '/images/icons/knob.png',
+			startAt: 20,
+			colorStart: '#95a527',
+			colorEnd: '#95a527',
+			buttons: true,
+			drag: function(o){
+				var pct = Math.round(o.value);
+				$('.jsTime').html(pct);
+			},
+			onButton: function(o){
+				var pct = Math.round(o.value);
+				$('.jsTime').html(pct);
+			}
+		});
+	}
+
 	Daddy.init = function() {
 		var $window = $(window);
 
@@ -27,9 +46,11 @@ $(function(){
 				$.sidr('close');
 	        }
         });
+
+        if($('#slider').length) {
+        	Daddy.slider();
+        }
 	};
-
-
 
 	Daddy.init();
 
